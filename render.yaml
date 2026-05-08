@@ -1,11 +1,15 @@
-services:
-  - type: web
-    name: wakeley-foundation
-    runtime: node
-    plan: free
-    buildCommand: npm ci && npm run build
-    startCommand: npm start
-    envVars:
-      - fromGroup: fdnvars
-      - key: NODE_VERSION
-        value: "22"
+projects:
+  - name: wakeley-foundation
+    environments:
+      - name: Site
+        services:
+          - type: web
+            name: wakeley-foundation
+            runtime: node
+            plan: free
+            buildCommand: npm ci && npm run build
+            startCommand: npm start
+            envVars:
+              - fromGroup: fdnvars
+              - key: NODE_VERSION
+                value: "22"
