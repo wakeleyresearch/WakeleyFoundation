@@ -52,7 +52,7 @@ The site does not use accounts, sessions, or a database. Contact submissions are
 - Blueprint: `render.yaml`
 - Custom domain: `wakeleyfoundation.com`
 
-Keep DNS for `wakeleyfoundation.com` in Cloudflare and point it to the Render custom-domain target Render provides. The Blueprint links the `fdnvars` environment group, so keep Turnstile, Resend, and contact email values there instead of committing them.
+See `DEPLOY.md` for the Cloudflare DNS + Render custom-domain runbook. The Blueprint links the `fdnvars` environment group, so keep Turnstile, Resend, and contact email values there instead of committing them.
 
 ## Third-Party Notices
 
