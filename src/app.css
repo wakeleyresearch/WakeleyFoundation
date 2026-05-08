@@ -1,0 +1,122 @@
+@import '@fontsource/caveat/latin-600.css';
+@import '@fontsource/crimson-pro/latin-600-italic.css';
+@import 'tailwindcss';
+
+:root {
+  --color-slate-blue-grey: #6e7882;
+  --color-off-white: #fafafa;
+  --color-charcoal: #1e1e1e;
+  --color-warm-sand: #d9cdb8;
+  --color-muted-terracotta: #b87e68;
+  --color-deep-slate: #3d454d;
+  --color-mist: #edeef0;
+  --font-body:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display:
+    "Inter Tight", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-hero: "Caveat", cursive;
+  --font-brand-serif: "Crimson Pro", Constantia, "Palatino Linotype", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-off-white);
+  color: var(--color-charcoal);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-body);
+  letter-spacing: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+canvas {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--color-muted-terracotta);
+  color: var(--color-off-white);
+}
+
+.screen-reader-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hero-title {
+  font-family: var(--font-hero);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.brand-wordmark {
+  font-family: var(--font-brand-serif);
+  font-size: 1.18rem;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 1;
+}
+
+.section-eyebrow {
+  font-family: var(--font-brand-serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+.grainient-fallback {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(217, 205, 184, 0.95), transparent 30%),
+    radial-gradient(circle at 76% 28%, rgba(184, 126, 104, 0.88), transparent 34%),
+    linear-gradient(135deg, #6e7882 0%, #3d454d 58%, #1e1e1e 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
