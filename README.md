@@ -30,7 +30,7 @@ Most editable landing-page text lives in `src/lib/content/site.ts`. Update the m
 
 ## Environment Variables
 
-Create these in Render service environment settings. For local development, copy `.env.example` to `.env` and fill values there.
+Create these in the Render environment group `fdnvars`, which is linked from `render.yaml`. For local development, copy `.env.example` to `.env` and fill values there.
 
 ```text
 PUBLIC_TURNSTILE_SITE_KEY=
@@ -52,7 +52,7 @@ The site does not use accounts, sessions, or a database. Contact submissions are
 - Blueprint: `render.yaml`
 - Custom domain: `wakeleyfoundation.com`
 
-Render environment variables marked `sync: false` in `render.yaml` must be filled in the Render Dashboard after the service is created. Keep DNS for `wakeleyfoundation.com` in Cloudflare and point it to the Render custom-domain target Render provides.
+Keep DNS for `wakeleyfoundation.com` in Cloudflare and point it to the Render custom-domain target Render provides. The Blueprint links the `fdnvars` environment group, so keep Turnstile, Resend, and contact email values there instead of committing them.
 
 ## Third-Party Notices
 
