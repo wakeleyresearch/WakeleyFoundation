@@ -1,6 +1,13 @@
 import type { Handle } from '@sveltejs/kit';
 
-const productionHost = 'wakeleyfoundation.com';
+const productionHost = 'www.wakeleyfoundation.org';
+const redirectHosts = new Set([
+  'wakeleyfoundation.org',
+  'fdn.wakeleyfoundation.org',
+  'wakeleyfoundation.com',
+  'fdn.wakeleyfoundation.com',
+  'www.wakeleyfoundation.com'
+]);
 
 function buildCsp(isDev: boolean) {
   const scriptSrc = ["'self'", "'unsafe-inline'", 'https://challenges.cloudflare.com'];
@@ -29,7 +36,7 @@ function buildCsp(isDev: boolean) {
 }
 
 export const handle: Handle = async ({ event, resolve }) => {
-  if (event.url.hostname === `www.${productionHost}`) {
+  if (redirectHosts.has(event.url.hostname)) {
     const canonicalUrl = new URL(event.url);
     canonicalUrl.hostname = productionHost;
 

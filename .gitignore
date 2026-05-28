@@ -16,3 +16,5 @@ pnpm-debug.log*
 # DNS zone import/export — kept locally for reference, not tracked
 /wakeleyfoundation.com.zone
 /wakeleyfoundation.com.txt
+
+.vercel

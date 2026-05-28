@@ -1,0 +1,38 @@
+;;
+;; Wakeley Foundation — target DNS zone for wakeleyfoundation.org.
+;;
+;; This file represents the intended Cloudflare-managed state once the
+;; registrar points wakeleyfoundation.org at Cloudflare nameservers.
+;;
+;; Primary website:
+;;   https://www.wakeleyfoundation.org
+;;
+;; Fallback website:
+;;   https://wakeleyfoundation.com -> redirects to .org in app code
+;;
+
+$ORIGIN wakeleyfoundation.org.
+$TTL 3600
+
+;; SOA/NS are managed by Cloudflare once the zone is active.
+
+;; --- Vercel website ------------------------------------------------------
+@      1  IN  A      76.76.21.21
+www    1  IN  A      76.76.21.21
+fdn    1  IN  A      76.76.21.21
+
+;; --- Google Workspace mail routing (mirrors .com) -----------------------
+@      1  IN  MX   1 aspmx.l.google.com.
+@      1  IN  MX   5 alt1.aspmx.l.google.com.
+@      1  IN  MX   5 alt2.aspmx.l.google.com.
+@      1  IN  MX  10 alt3.aspmx.l.google.com.
+@      1  IN  MX  10 alt4.aspmx.l.google.com.
+
+;; --- SPF / DMARC baseline -----------------------------------------------
+@       3600  IN  TXT  "v=spf1 include:_spf.google.com ~all"
+_dmarc  3600  IN  TXT  "v=DMARC1; p=none; rua=mailto:dmarc@wakeleyfoundation.org"
+
+;; Note:
+;; DKIM and site-verification TXT records are domain-specific and should be
+;; generated from the provider dashboards for the .org domain rather than
+;; copied blindly from .com.

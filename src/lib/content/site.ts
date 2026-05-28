@@ -10,8 +10,8 @@ export const palette = {
 
 export const site = {
   name: 'Wakeley Foundation',
-  domain: 'wakeleyfoundation.com',
-  url: 'https://wakeleyfoundation.com',
+  domain: 'www.wakeleyfoundation.org',
+  url: 'https://www.wakeleyfoundation.org',
   description:
     'Wakeley Foundation supports entrepreneurship education, small-business sustainability, workforce readiness, and community economic opportunity in North Carolina.',
   nav: [
